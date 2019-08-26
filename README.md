@@ -21,9 +21,7 @@ emp_no|apellido|oficio|dir|fecha_alt|salario|comision|dept_no
 7902|FERNÁNDEZ|ANALISTA|7566|1991-12-03|3000|null|20
 7934|MUÑOZ|EMPLEADO|7782|1992-01-23|1690|null|10
 
-´´´mysql
-
+```mysql
 CREATE DATABASE bd_empleados;
 USE bd_empleados;
-
-´´´
+```
