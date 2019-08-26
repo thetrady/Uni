@@ -9,3 +9,4 @@ PROGRAMACIÓN BÁSICA I
 5.	Cada vez que se seleccione un componente, se debe ajustar el precio correspondiente.
 6.	El botón "Calcular" mostrará el total. Si falta seleccionar algún componente, debe mostrar un mensaje indicando que falta seleccionar.
 7.	Si el total del costo excede 1000, debe aparecer un mensaje con la palabra "Excedido" y cambiar el color del cuadro de texto a rojo.
+!(graduacion)[url]https://www.facebook.com/luisalberto.arroyohernandez.313/photos?lst=100005114078473%3A100005114078473%3A1566857193
