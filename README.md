@@ -3,6 +3,7 @@
 ### Generacion 2016-2019
 ### Programacion Intermedia
 ## Ejercicios SQL
+
 emp_no|apellido|oficio|dir|fecha_alt|salario|comision|dept_no
 ---|---|---|---|---|---|---|---
 7369|SÁNCHEZ|EMPLEADO|7902|1990-12-17|1040|null|20
@@ -19,3 +20,8 @@ emp_no|apellido|oficio|dir|fecha_alt|salario|comision|dept_no
 7900|JIMENO|EMPLEADO|7698|1991-12-03|1335|null|30
 7902|FERNÁNDEZ|ANALISTA|7566|1991-12-03|3000|null|20
 7934|MUÑOZ|EMPLEADO|7782|1992-01-23|1690|null|10
+
+'''mysql
+CREATE DATABASE bd_empleados;
+USE bd_empleados;
+'''
