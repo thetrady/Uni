@@ -1,5 +1,6 @@
 # Uni
 Proyecto
+PROGRAMACIÓN BÁSICA I
 
 1.	La lista "Tipo de Procesador" contendrá los siguientes elementos: Pentium II 350, Celeron, Core 2 Duo; con los precios 100, 250, 350 respectivamente.
 2.	Los costos de la memoria serán 32 a 30, 64 a 60 y 128 a 120.
