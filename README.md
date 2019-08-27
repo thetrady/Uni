@@ -1,18 +1,10 @@
 # UNIVERSIDAD MULTICULTURAL CUDEC
 ## Luis Alberto Arroyo Hernandez 
 ### Generacion 2016-2019
-##&&&&&&&&&&&&&&&&&&&&&&&&&&
-WNl.                                    .',;;;clcc:;,:cc:;,,',;;,'''',',,,,,,,;;c:.                                    .:llc:clooooooooddoc;''..                                      .........'',,;;;'     ..                                                      ....                ...';c:..',,,,,;coo
-XMO'             .::.                .cc'.',:;;cllcc::ccc:lddo:;,'':ol;,ldc,,,,;;c:.              .,,.                  ,dkko:cllooooooooddl;,'..                                     ...........',;;:;.    .'.                                                                          ...',::..',''',:llo
-WNl.             :XX:      ....  ....,kkc..;cccllcllcccc:oXWWWk:'.'oNKc:0Wk:::;;;:;......  ....'.,dXO;.  ..'...  .     'OWWW0l:clooooooodddol;'......   ....  ....  ..''..            ..........',,;;:,.    ',...                                                                        ...',::'.,'''';clll
-Wx.              :XX:      ,O0: .oKx.;O0c'l0OxOKOollcclcl0WOxXNd'..oNKc:0WX00KKx:;lk0O00d'.lKK0OkkXMNO;'lO0000d'.     .dN0d0WOc:cxXNXKOkKNXK0o:dO0O00dc,;k0c..c0k,.:k0000k:.         ...........',,;;;,.  .';:;'.                                                                        ....,:c'.''''';clll
-0,               :XX:      ;KXc .dWk':XXc,OWKkk0klclcccckNXocOWKc..oXKc;0W0l:dXNxlKWKxxXWk'oWXl'.'kWO;.dN0c';OWk'    .cXNo,oNNx::kWWOocoXWKxlcxNKc';kNWk;oXO,;0Xl.:KNd,,dNX:         ...........'',,;;;,..,:cl:.                                                                         ....':c,.''.',:llll
-:                :XX:      ;KNl..kWk':XXc.:xO0XNXklccc:dXWX00KNWO;.oXKc;0WO;'cKWkdXWOlcoo:.oW0,  .xWk..kWk' .dW0,    ,0WX0O0XWKo;xWXdccdXWOlllOWO' .oNM0,.xNOONd..lNK:..:KNl.       ..............'',,;;;;::cc'                                                                         ......,c;''..',:lllo
-                 cXNOooool''OWKxkXWk':XXc'oOkdxXNklcccoKW0lcccdXNx,oXKc:0MN0kKNKl:kXKxxOx,.dWO'  .dWXx:c0XOxkXKc.   .xW0c''':0W0cdNXdccdXWOllco0N0xkXKOc. ,0WWO'  .xXKxxKXx'        ...............',,;;;;:cc,.                                                      ....               ......':;''...,:clll
-                 .cllllllc. 'cll::c;..cc...:dkkxl;;cc:lddc,,,',cdl,;ol,,ldooddo:,,,;cllc'. ,l:.   .cll,..:lll:.     .:l,.    ,odclxxlccldxdllc,;clll:'.   .xWK:    .,cllc,.        .................',,;;:cc;.                                                       ....                .....';;'...',:ccll
-                                            .;c:,';cc:,''''............'''''''',,,.                                            ';,,;:ccc;,cllc,..       .cOXKc.                    ..................',,;:c:.                                                        ....                 .....','...,;:cccl
-                                            .;cc;';c:,...............''''''''',,''.                                            .,,'',;;:;,;cc;,'..       .,,.                      ...................',,;;.           
-
+## `
+## &&&&&&&&&&&&&&&&&&&&&&&&&&
+## &&&&&&&&&&&&&&&&&&&&&&&&&&
+## `
 ### Programacion Intermedia
 ## Ejercicios SQL
 
@@ -393,7 +385,7 @@ WHERE dept_no = 10 AND comision IS NULL;
 
 
 
-
+# D
 
 
 
