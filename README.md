@@ -344,14 +344,20 @@ FROM emple;
 ```
 
 >-- 36) Mostrar los datos de los empleados que hayan sido contratados en el año 1992. 
+```mysql
 SELECT * 
 FROM emple 
 WHERE year(fecha_alt) = 1992; 
+```
 >-- 37) Mostrar los datos de los empleados que hayan sido contratados en el mes de febrero de cualquier año (función MONTHNAME). 
 ```mysql
 SELECT * 
 FROM emple 
-WHERE monthname(fecha_alt) = 'February'; SELECT apellido, fecha_alt
+WHERE monthname(fecha_alt) = 'February'; 
+```
+
+```mysql
+SELECT apellido, fecha_alt
 FROM emple
 WHERE month(fecha_alt) = 2;
 ```
