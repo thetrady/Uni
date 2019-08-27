@@ -418,7 +418,7 @@ create table alumnos(
 ```
 
 >CREACION DE LA TABLA alumnos
-```mysq;
+```mysql
 insert into alumnos values(123456,'Juan Miguel Soler Bakero','Murcia','1995/10/10','Gran Vía, 2, 4A',1,'ESO',15);
 insert into alumnos values(654321,'Laura Gómez Fernández','Lorca','1994/05/10','Junterones, 10, 5B',2,'ESO',25);
 insert into alumnos values(765432,'Beatriz Martínez Hernández','Murcia','1993/05/05','Plaza Mayor, 6, 3B',3,'ESO',5);
