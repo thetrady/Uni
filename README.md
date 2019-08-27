@@ -432,6 +432,10 @@ insert into alumnos values(993322,'Gema Rubio Colero','Lorca','1992/09/09','Plaz
 insert into alumnos values(554411,'Joaquín Hernández González','Lorca','1991/12/12','Junterones, 4, 5A',2,'BACHILLER',14);
 ```
 >INSERTAMOS VALORES EN LA TABLE alumnos
+
+
+
+
 expediente|nombre|localidad|fecha_nac|direccion|curso|nivel|faltas
 ---|---|---|---|---|---|---|---
 123456|Juan Miguel Soler Bakero|Murcia|1995-10-10|Gran Vía, 2, 4A|1|ESO|15
@@ -445,6 +449,9 @@ expediente|nombre|localidad|fecha_nac|direccion|curso|nivel|faltas
 334400|Javier Ramánez Rodríguez|Murcia|1993-05-27|Gran Vía, 4, 3A|3|ESO|0
 993322|Gema Rubio Colero|Lorca|1992-09-09|Plaza Fuensanta, 5, 7A|1|BACHILLER|19
 554411|Joaquín Hernández González|Lorca|1991-12-12|Junterones, 4, 5A|2|BACHILLER|14
+
+
+
 >-- 1) Muestra todos los datos de todos los alumnos. 
 ```mysql
 SELECT * 
