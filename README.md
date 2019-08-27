@@ -23,7 +23,7 @@
 ### Programacion Intermedia
 
 
-## Ejercicios SQL
+## Ejercicio mySQL - 01
 
 ```mysql
 CREATE DATABASE bd_empleados;
@@ -398,8 +398,338 @@ FROM emple
 WHERE dept_no = 10 AND comision IS NULL;
 ```
 
+## Ejercicio MySQL - 02
+```mysql
+CREATE DATABASE bd_colegio;
+USE bd_colegio
+```
+>CREACION DE BASE DE DATOS
+```mysql
+create table alumnos(
+  expediente int(10) primary key,
+  nombre varchar(50),
+  localidad varchar(50),
+  fecha_nac date,
+  direccion varchar(50),
+  curso int(2),
+  nivel varchar(10),
+  faltas int(3)
+);
+```
 
-
+>CREACION DE LA TABLA alumnos
+```
+insert into alumnos values(123456,'Juan Miguel Soler Bakero','Murcia','1995/10/10','Gran Vía, 2, 4A',1,'ESO',15);
+insert into alumnos values(654321,'Laura Gómez Fernández','Lorca','1994/05/10','Junterones, 10, 5B',2,'ESO',25);
+insert into alumnos values(765432,'Beatriz Martínez Hernández','Murcia','1993/05/05','Plaza Mayor, 6, 3B',3,'ESO',5);
+insert into alumnos values(987654,'Diego Martín Llorente','Alhama de Murcia','1990/06/03','Diego de la Cierva, 5, 7A',1,'BACHILLER',34);
+insert into alumnos values(445544,'Juan Francisco Cano Riquelme','Murcia','1992/07/01','Plaza de Belluga, 3, 4A',4,'ESO',13);
+insert into alumnos values(223322,'Raquel Riquelme Rubio','Lorca','1990/11/23','San Juan, 14, 3B',1,'BACHILLER',7);
+insert into alumnos values(9988877,'Cristina Sánchez Bermejo','Murcia','1995/03/19','Torre de Romo, 7',1,'ESO',1);
+insert into alumnos values(334455,'Pedro Jesús Rodríguez Soler','Alhama de Murcia','1994/03/10','Camino de Badel, 4',2,'ESO',11);
+insert into alumnos values(334400,'Javier Ramánez Rodríguez','Murcia','1993/05/27','Gran Vía, 4, 3A',3,'ESO',0);
+insert into alumnos values(993322,'Gema Rubio Colero','Lorca','1992/09/09','Plaza Fuensanta, 5, 7A',1,'BACHILLER',19);
+insert into alumnos values(554411,'Joaquín Hernández González','Lorca','1991/12/12','Junterones, 4, 5A',2,'BACHILLER',14);
+```
+>INSERTAMOS VALORES EN LA TABLE alumnos
+expediente|nombre|localidad|fecha_nac|direccion|curso|nivel|faltas
+---|---|---|---|---|---|---|---
+123456|Juan Miguel Soler Bakero|Murcia|1995-10-10|Gran Vía, 2, 4A|1|ESO|15
+654321|Laura Gómez Fernández|Lorca|1994-05-10|Junterones, 10, 5B|2|ESO|25
+765432|Beatriz Martínez Hernández|Murcia|1993-05-05|Plaza Mayor, 6, 3B|3|ESO|5
+987654|Diego Martín Llorente|Alhama de Murcia|1990-06-03|Diego de la Cierva, 5, 7A|1|BACHILLER|34
+445544|Juan Francisco Cano Riquelme|Murcia|1992-07-01|Plaza de Belluga, 3, 4A|4|ESO|13
+223322|Raquel Riquelme Rubio|Lorca|1990-11-23|San Juan, 14, 3B|1|BACHILLER|7
+9988877|Cristina Sánchez Bermejo|Murcia|1995-03-19|Torre de Romo, 7|1|ESO|1
+334455|Pedro Jesús Rodríguez Soler|Alhama de Murcia|1994-03-10|Camino de Badel, 4|2|ESO|11
+334400|Javier Ramánez Rodríguez|Murcia|1993-05-27|Gran Vía, 4, 3A|3|ESO|0
+993322|Gema Rubio Colero|Lorca|1992-09-09|Plaza Fuensanta, 5, 7A|1|BACHILLER|19
+554411|Joaquín Hernández González|Lorca|1991-12-12|Junterones, 4, 5A|2|BACHILLER|14
+>-- 1) Muestra todos los datos de todos los alumnos. 
+```mysql
+SELECT * 
+FROM alumnos; 
+``` 
+>-- 2) Muestra el nombre , localidad y fecha de nacimiento de todos los alumnos. 
+```mysql
+SELECT nombre, localidad, fecha_nac 
+FROM alumnos; 
+```
+>-- 3) Muestra el nombre de todos los alumnos. En el resultado de la consulta, la columna “Nombre” debe aparecer con la etiqueta “Nombre y apellidos” (ALIAS DE COLUMNAS). 
+```mysql
+SELECT nombre "Nombre y apellidos", fecha_nac 
+FROM alumnos; 
+```
+>-- 4) Obtén el nombre y el número de faltas multiplicado por 2 de todos los alumnos (COLUMNAS CALCULADAS). En el resultado de la consulta, la columna faltas debe aparecer con la etiqueta “Faltas de asistencia” (ALIAS DE COLUMNAS) 
+```mysql
+SELECT nombre, faltas * 2 "Faltas de asistencia" 
+FROM alumnos; 
+```
+>-- 5) Consulta los datos de los alumnos que son de Lorca. 
+```mysql
+SELECT * 
+FROM alumnos 
+WHERE localidad = 'Lorca'; 
+```
+>-- 6) Obtén los datos de los alumnos que son de Murcia o Alhama de Murcia. 
+```mysql
+SELECT nombre, localidad
+FROM alumnos 
+WHERE localidad = 'Alhama de Murcia' 
+  OR localidad = 'Murcia'; SELECT nombre, localidad 
+FROM alumnos 
+WHERE localidad IN ('Murcia', 'Alhama de Murcia') 
+```
+```mysql
+SELECT nombre, localidad 
+FROM alumnos 
+WHERE localidad LIKE '%murcia%'; 
+```
+>-- 7) Obtén los datos de los alumnos que son de Murcia y están en el primer curso de E.S.O. 
+```mysql
+SELECT * 
+FROM alumnos 
+WHERE localidad = 'Murcia' 
+  AND nivel = 'ESO' 
+  AND curso = 1; 
+ ```
+>-- 8) Muestra los alumnos que son de Lorca, están en segundo curso de Bachillerato y tienen más de 10 faltas. 
+```mysql
+SELECT * 
+FROM alumnos 
+WHERE localidad = 'Lorca' 
+  AND nivel = 'BACHILLER' 
+  AND curso = 2
+  AND faltas > 10; 
+  ```
+>-- 9) Obtén los datos de aquellos alumnos que son de Murcia ordenados por nombre. 
+```mysql
+SELECT * 
+FROM alumnos 
+WHERE localidad = 'Murcia' 
+ORDER BY nombre; 
+```
+>-- 10) Obtén los datos de todos los alumnos ordenados por nivel, y dentro de cada nivel por curso. 
+```mysql
+SELECT nivel, nombre, curso 
+FROM alumnos 
+ORDER BY nivel, curso; 
+```
+>-- 11) Muestra los datos de aquellos alumnos que tengan más de 10 faltas en primer o segundo curso. 
+```mysql
+SELECT nombre, faltas, curso 
+FROM alumnos 
+WHERE faltas > 10 
+  AND (curso = 1 OR curso = 2);
+```
+```mysql
+  SELECT nombre, faltas, curso 
+FROM alumnos 
+WHERE faltas > 10 
+  AND curso IN (1, 2);
+  ```
+>-- 12) Muestra los datos de todos aquellos alumnos que tengan menos de 10 faltas en 3o o 4o curso y además sean de Murcia. 
+```mysql
+SELECT nombre, faltas, curso, localidad 
+FROM alumnos 
+WHERE faltas < 10 
+  AND localidad = 'Murcia' 
+  AND (curso = 3 or curso = 4); 
+  ```
+  ```mysql
+  SELECT * 
+FROM alumnos 
+WHERE faltas < 10 
+  AND localidad = 'Murcia' 
+  AND curso IN (3, 4); 
+  ```
+>-- 13) Obtén con una consulta todos los cursos que hay sin repeticiones (DISTINCT). 
+```mysql
+SELECT DISTINCT curso 
+FROM alumnos; SELECT DISTINCT nivel 
+FROM alumnos; SELECT DISTINCT localidad 
+FROM alumnos; 
+```
+>-- 14) Obtén los datos de los alumnos que no tengan 10 faltas en 1o de E.S.O. 
+```mysql
+SELECT nombre, faltas, curso, nivel 
+FROM alumnos 
+WHERE faltas <> 10 
+  AND nivel = 'ESO' 
+  AND curso = 1; 
+  ```
+>-- 15) Muestra los datos de aquellos alumnos cuyo nombre empiece por la letra 'B'. 
+```mysql
+SELECT nombre 
+FROM alumnos 
+WHERE nombre LIKE 'B%'; 
+```
+>-- 16) Con una consulta obtén los alumnos que son de Murcia y cuyo nombre termina con una letra 'O'. 
+```mysql
+SELECT nombre, localidad 
+FROM alumnos 
+WHERE nombre LIKE '%o' 
+  AND localidad = 'Murcia'; 
+  ```
+>-- 17) Muestra los datos de todos aquellos alumnos que están en 1o curso de E.S.O. Y tienen una letra 'U' en la segunda posición del nombre. 
+```mysql
+SELECT nombre, curso, nivel 
+FROM alumnos 
+WHERE curso = 1 
+  AND nivel = 'ESO' 
+  AND nombre LIKE '_u%'; 
+  ```
+>-- 18) Obtén los datos de los alumnos cuya columna “Faltas” es nula. 
+```mysql
+SELECT nombre, faltas 
+FROM alumnos 
+WHERE faltas IS NULL ; 
+```
+>-- 19) Muestra los datos de aquellos alumnos que tienen entre 10 y 20 faltas (BETWEEN). Ordena el resultado por nombre. 
+```mysql
+SELECT nombre, faltas 
+FROM alumnos 
+WHERE faltas BETWEEN 10 AND 20
+ORDER BY nombre; 
+```
+>-- 20) Muestra los datos de los alumnos que tienen entre 10 y 20 faltas y además son de Murcia. 
+```mysql
+SELECT nombre, faltas, localidad 
+FROM alumnos 
+WHERE faltas BETWEEN 10 AND 20 
+  AND localidad = 'Murcia';
+  ```
+>-- 21) Muestra los datos de los alumnos que tienen entre 10 y 20 faltas, son de Murcia y están matriculados en 1o de E.S.O. 
+```mysql
+SELECT nombre, faltas, localidad, curso, nivel 
+FROM alumnos 
+WHERE faltas BETWEEN 10 AND 20 
+  AND localidad = 'Murcia' 
+  AND curso = 1 
+  AND nivel = 'ESO'; 
+  ```
+>-- 22) Con una consulta muestra los datos de los alumnos cuyas faltas sean menores que 10 y mayores que 20. 
+```mysql
+SELECT nombre, faltas 
+FROM alumnos 
+WHERE faltas NOT BETWEEN 10 AND 20; SELECT nombre, faltas 
+FROM alumnos 
+WHERE faltas < 10 
+  OR faltas > 20; 
+  ```
+>-- 23) Muestra los datos de los alumnos cuya fecha de nacimiento comprenda los años 1993 y 1994. Ordena el resultado por nombre. 
+```mysql
+SELECT nombre, fecha_nac 
+FROM alumnos 
+WHERE fecha_nac BETWEEN '1993-01-01' AND '1994-12-31' 
+ORDER BY nombre; SELECT nombre, fecha_nac 
+FROM alumnos 
+WHERE year(fecha_nac) BETWEEN 1993 AND 1994 
+ORDER BY nombre; SELECT nombre, fecha_nac 
+FROM alumnos 
+WHERE year(fecha_nac) IN (1993, 1994) 
+ORDER BY nombre; SELECT nombre, fecha_nac 
+FROM alumnos 
+WHERE year(fecha_nac) = 1993 
+  OR year(fecha_nac) = 1994
+ORDER BY nombre; 
+```
+>-- 24) Muestra los datos de los alumnos que sean de primer o segundo curso (no importa que sean de E.S.O. O Bachiller). Utiliza el operador IN. 
+```mysql
+SELECT nombre, curso, nivel 
+FROM alumnos 
+WHERE curso IN (1, 2); 
+-- 25) Obtén los datos de aquellos alumnos que sean de tercer o cuarto curso y sean de Murcia. Utiliza el operador IN. 
+SELECT nombre, curso, localidad 
+FROM alumnos 
+WHERE curso IN (3, 4) 
+  AND localidad = 'Murcia'; 
+  ```
+>-- 26) Muestra los datos de los alumnos que no sean de E.S.O, ordenados por curso y por nombre descendentemente. Utiliza el operador IN. 
+```mysql
+SELECT nombre, curso, nivel 
+FROM alumnos 
+WHERE nivel NOT IN ('ESO') 
+ORDER BY curso DESC, nombre DESC; 
+```
+>-- 27) Muestra los datos de los alumnos que sean de primer o segundo curso y no sean de Bachiller. Ordena el resultado por nombre. 
+```mysql
+SELECT nombre, curso, nivel 
+FROM alumnos 
+WHERE nivel <> 'BACHILLER'
+  AND (curso = 1 OR curso = 2) 
+ORDER BY nombre; SELECT nombre, curso, nivel 
+FROM alumnos 
+WHERE nivel NOT IN ('BACHILLER') 
+  AND curso IN (1, 2) 
+ORDER BY nombre; 
+```
+>-- 28) Obtén los datos de los alumnos cuyo nombre empiece por la letra 'J', que tengan más de 10 faltas y no sean de Bachiller. Ordena el resultado por curso, y dentro de cada curso, por nombre. 
+```mysql
+SELECT nombre, faltas, curso, nivel 
+FROM alumnos 
+WHERE nivel <> 'BACHILLER' 
+  AND faltas > 10
+  AND nombre LIKE 'J%' 
+ORDER BY curso, nombre; SELECT nombre, faltas, curso, nivel 
+FROM alumnos 
+WHERE nivel <> 'BACHILLER' 
+  AND faltas > 10
+  AND nombre >= 'J' AND nombre < 'K'
+ORDER BY curso, nombre; 
+```
+>-- 29) Con una consulta obtén el expediente, nombre, curso y nivel de todos los alumnos ordenado por curso, nivel ascendentemente y nombre descendentemente cuyo nivel no sea 'BACHILLER'. 
+```mysql
+SELECT expediente, nombre, curso, nivel 
+FROM alumnos 
+WHERE nivel <> 'Bachiller'
+ORDER BY curso, nivel, nombre DESC; 
+```
+>-- 30) Con una consulta obtén el nombre de cada alumno en mayúscula cuya localidad sea Murcia. 
+```mysql
+SELECT upper(nombre) 
+FROM alumnos 
+WHERE localidad = 'Murcia';
+```
+>-- 31) Muestra el nombre de cada alumno en mayúscula y la localidad a la que pertenecen en minúscula, ordenados por localidad. 
+```mysql
+SELECT upper(nombre), lower(localidad) 
+FROM alumnos 
+ORDER BY localidad; 
+```
+>-- 32) Con una consulta concatena el nombre de cada alumno y la localidad y sustituye 'BACHILLER' por 'Bachillerato'. 
+```mysql
+SELECT concat(nombre, ' ', localidad), 
+  replace(nivel, 'BACHILLER', 'Bachillerato') 
+FROM alumnos; SELECT replace(nivel, 'E', 'XX')
+FROM alumnos; 
+```
+>-- 33) Con una consulta obtén el nombre de cada alumno y la longitud de la cadena “Nombre”. 
+```mysql
+SELECT nombre, length(nombre) 
+FROM alumnos; SELECT nombre,
+  length(nombre) numero_caracteres, 
+  replace(nombre, ' ', '') nombre_sin_espacios,
+  length(replace(nombre, ' ', '')) numero_letras 
+FROM alumnos; 
+```
+>-- 34) Con una consulta obtén el nombre, año de nacimiento y mes de nacimiento de cada uno de los alumnos. 
+```mysql
+SELECT nombre,
+  year(fecha_nac),
+  month(fecha_nac),
+  day(fecha_nac),
+  monthname(fecha_nac) 
+FROM alumnos; 
+```
+>-- 35) Con una consulta muestra el nombre y edad de cada uno de los alumnos (la edad se calcula restando al año actual el año de nacimiento) 
+```mysql
+SELECT nombre, 
+  2012 - year(fecha_nac) 
+FROM alumnos; SELECT nombre, 
+  year(current_date()) - year(fecha_nac) edad
+FROM alumnos; SELECT CURRENT_DATE, CURRENT_TIME, CURREN_TIMESTAMP;
+```
 
 
 
